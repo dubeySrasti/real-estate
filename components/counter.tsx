@@ -59,7 +59,7 @@ export default function Counters() {
 // ----------------------------------------------
 // CountUp Component (number animation)
 // ----------------------------------------------
-function CountUp({ target }) {
+function CountUp({ target }: { target: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -83,4 +83,5 @@ function CountUp({ target }) {
   }, [target]);
 
   return <>{count}</>;
+
 }
