@@ -1,5 +1,5 @@
 import Footer from "@/components/footer";
-import GallerySlider from "@/components/gallerySlider";
+import GallerySlider from "@/components/gallery";
 import Navbar from "@/components/navbar";
 import PropertyData from "@/components/propertyData";
 

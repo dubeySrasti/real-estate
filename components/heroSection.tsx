@@ -106,7 +106,7 @@ export default function HeroSection() {
                     </p>
                 </div>
                 <div className="hero-mobile-img ">
-                    <div className="w-[230px] m-auto">
+                    <div className="w-[230px] m-auto relative">
 
                         {/* LEFT FLOATING CARD */}
                         <div className=" text-black flex flex-col gap-0.5 py-2 px-3
