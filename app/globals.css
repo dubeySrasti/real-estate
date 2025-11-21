@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bgLight: #d4d5ff;
+  --primary: #0033A4;
+  --secondary: #1B1C57;
+  --black: #000000;
+  /* --textBlack:#1B1C57; */
+  --textLight: #94A3B8;
+  --border: #B6B6B64D;
+  --gray: #B0B0B01A;
+  --textDark: #1A1E25;
+
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: #F3F3FB;
+  color: var(--foreground);
+  font-family: var(--font-nunito), sans-serif;
+  line-height: normal !important;
+}
+
+.container {
+  max-width: 1270px !important;
+}
+/* Property */
+.hero-gradient {
+  background: radial-gradient(
+      circle at 70% 20%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(245, 245, 255, 0.95) 20%,
+      rgba(210, 210, 255, 0.7) 40%,
+      rgba(160, 160, 220, 0.6) 60%,
+      rgba(110, 120, 180, 0.7) 80%,
+      rgba(70, 80, 130, 0.9) 100%
+    );
+}
+
+/* CUSTOM CSS */
+.footer-background-img {
+  background-image: url('/assets/images/png/footer_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Desktop Image */
+.hero-background-img {
+  background-image: url('/assets/images/png/heroBack_img.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+/* Mobile Image */
+.hero-mobile-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-mobile-img {
+  background-image: url('/assets/images/png/heroBack_mobileimg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100%;
+
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-left,
+.floating-right {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+/* PropertyCard */
+/* Hide Scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide Scrollbar for Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Hide Scrollbar for IE, Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #170085; 
+}
+
+
+
+/*  Mobile screen (0–575px) */
+@media (max-width: 575px) {
+
+  .hero-background-img {
+    display: none;
+  }
+
+  .hero-mobile-view {
+    display: block;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .app-buttons {
+    flex-direction: column;   /* buttons column */
+    align-items: flex-start;  /* items-start */
+  }
+  .mobile-img{
+    top:-4px !important;
+  }
+  .right-heading{
+    font-size: 14px !important;
+  }
+}
+
+/* 1100px se neeche */
+@media (max-width: 1023px) {
+  .custom-right-box {
+    width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* 575px se neeche */
+@media (max-width: 575px) {
+  .custom-right-box {
+    width: 100% !important;
+  }
+}
