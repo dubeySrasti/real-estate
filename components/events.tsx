@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function WhatWeMake() {
   return (
- <section className="relative bg-[#f6f6fc] pt-10 sm:pt-16 pb-15 md:pb-20 overflow-hidden">
+ <section className="relative bg-[#f6f6fc] pt-10 sm:pt-16  sm:pb-15 md:pb-20 pb-10 overflow-hidden">
 
   {/* 🌟 CENTER BACKGROUND CIRCLE (Always centered behind 5 cards) */}
   <div className="
@@ -30,10 +30,10 @@ export default function WhatWeMake() {
 
     {/* Title */}
     <div className="w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 mx-auto text-center mb-12">
-      <h2 className="text-4xl sm:text-[40px] font-bold text-black mb-3">
+      <h2 className=" max-[400px]:text-xl text-3xl sm:text-[40px] font-bold text-black mb-3">
         What We Make
       </h2>
-      <p className="text-black font-semibold text-sm sm:text-xl">
+      <p className="text-black font-semibold max-[400px]:text-[10px] text-xs sm:text-xl">
         Leap Social hosts some of the largest singles events in the world!  
         Our Ai matchmaker even suggests who to speak to.
       </p>

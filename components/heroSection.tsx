@@ -98,7 +98,7 @@ export default function HeroSection() {
             <div className="hero-mobile-view relative">
                 {/* Title */}
                 <div className="w-10/12 sm:w-8/12 m-auto flex flex-col gap-3 justify-center items-center pt-6 pb-8">
-                    <h1 className="text-4xl xs:text-xl sm:text-3xl md:text-5xl lg:text-[64px]  font-extrabold text-black mb-0 text-center px-4 sm:px-0">
+                    <h1 className="text-3xl xs:text-xl sm:text-3xl md:text-5xl lg:text-[64px]  font-extrabold text-black mb-0 text-center px-4 sm:px-0">
                         The Future Of <span className="text-[var(--primary)]">Real Estate</span>
                     </h1>
                     <p className="text-black font-normal text-[12px] sm:text-lg sm:w-8/12 text-center mb-0">
@@ -106,7 +106,7 @@ export default function HeroSection() {
                     </p>
                 </div>
                 <div className="hero-mobile-img ">
-                    <div className="w-[230px] m-auto relative">
+                    <div className="w-[200px] m-auto relative">
 
                         {/* LEFT FLOATING CARD */}
                         <div className=" text-black flex flex-col gap-0.5 py-2 px-3

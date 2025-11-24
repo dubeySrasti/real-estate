@@ -51,8 +51,9 @@ export default function Footer() {
         {/* Main Content (FULL WIDTH – NO CONTAINER) */}
         <div
           className="
-   w-full             
-    px-8 
+   w-full      
+   px-5       
+    sm:px-8 
     md:px-15   
     xl:px-20          
     grid
@@ -60,7 +61,8 @@ export default function Footer() {
     sm:grid-cols-1
     md:grid-cols-3
     lg:grid-cols-12
-    gap-10
+    sm:gap-10
+    gap-5
     pt-10
     items-baseline
   "
@@ -71,7 +73,7 @@ export default function Footer() {
             <div className="flex flex-col gap-8">
               <img
                 src="/assets/images/svg/footer-logo.svg"
-                className="w-56"
+                className="w-35 sm:w-56"
                 alt="Logo"
               />
 
@@ -101,19 +103,19 @@ export default function Footer() {
                   and apartments to help people find their dream home.
                 </p>
 
-              <div className="hidden sm:block">
+                <div className="hidden sm:block">
                   <div className="flex gap-4">
-                  <a>
-                    <img src="/assets/images/svg/footer_face.svg" className="w-8" alt="facebook" />
-                  </a>
-                  <a>
-                    <img src="/assets/images/svg/footer_twit.svg" className="w-8" alt="twitter" />
-                  </a>
-                  <a>
-                    <img src="/assets/images/svg/footer_inst.svg" className="w-8" alt="instagram" />
-                  </a>
+                    <a>
+                      <img src="/assets/images/svg/footer_face.svg" className="w-8" alt="facebook" />
+                    </a>
+                    <a>
+                      <img src="/assets/images/svg/footer_twit.svg" className="w-8" alt="twitter" />
+                    </a>
+                    <a>
+                      <img src="/assets/images/svg/footer_inst.svg" className="w-8" alt="instagram" />
+                    </a>
+                  </div>
                 </div>
-              </div>
 
               </div>
             </div>
@@ -144,7 +146,7 @@ export default function Footer() {
           <div className="col-span-10 lg:col-span-3 sm:col-span-12 md:col-span-1 flex flex-col gap-2 sm:gap-6 sm:items-start items-center">
             <h4 className="font-semibold text-lg text-white">Contact</h4>
             <ul className="text-[#C5CADC] text-sm font-light flex flex-col gap-2 sm:gap-4 sm:items-start items-center">
-              <li>2464 Royal Ln. Mesa, New Jersey 45463</li>
+              <li className="text-center sm:text-start">2464 Royal Ln. Mesa, New Jersey 45463</li>
               <li>(671) 555-0110</li>
               <li>info@hounter.com</li>
             </ul>

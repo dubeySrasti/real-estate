@@ -32,20 +32,20 @@ export default function Counters() {
 
   return (
     <section ref={sectionRef} className="w-full bg-[#f4f4fb] pt-16 pb-10">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto sm:px-6 px-4">
 
         <div className="grid grid-cols-4 gap-4 text-center w-full">
           {counters.map((item, index) => (
             <div
               key={index}
-              className={`relative flex flex-col gap-1 sm:gap-3 items-center ${index !== counters.length - 1 ? "border-r border-gray-300" : ""
+              className={`relative flex flex-col gap-1 sm:gap-3 pe-2.5 sm:pe-0 items-center ${index !== counters.length - 1 ? "border-r border-gray-300" : ""
                 }`}
             >
-              <h2 className="text-lg sm:text-2xl md:text-6xl font-extrabold sm:font-bold text-black">
+              <h2 className=" max-[400px]:text-sm text-lg sm:text-2xl md:text-6xl font-extrabold sm:font-bold text-black">
                 {isVisible ? <CountUp target={item.number} /> : "0"}+
               </h2>
 
-              <p className="text-[9px] sm:text-lg font-semibold text-black">
+              <p className=" text-[9px] sm:text-lg font-semibold text-black">
                 {item.label}
               </p>
             </div>

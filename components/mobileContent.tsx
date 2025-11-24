@@ -32,10 +32,10 @@ export default function MobileContent() {
                 {/* Title */}
                 <div className="pt-11 pb-18 flex flex-col gap-10">
                     <div className="w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 m-auto text-center">
-                        <h2 className="text-2xl sm:text-[34px] md:text-[38px] lg:text-[42px] font-bold text-black mb-2">
+                        <h2 className=" max-[400px]:text-xl text-2xl sm:text-[34px] md:text-[38px] lg:text-[42px] font-bold text-black mb-2">
                             Find Your Dream Home Easily
                         </h2>
-                        <p className="text-black font-semibold text-xs sm:text-base  lg:text-lg sm:px-14 px-12">
+                        <p className="text-black font-semibold  max-[400px]:text-[10px] text-xs sm:text-base  lg:text-lg sm:px-14 px-12">
                             Whether you’re moving for work, study, or family — MyRental helps you find a place that truly feels like home.
                         </p>
                     </div>
@@ -116,10 +116,17 @@ export default function MobileContent() {
                     {/* col-md-4 (Content) */}
                     <div className="md:col-span-5 flex flex-col gap-3.5 justify-center order-1 md:order-none">
                         <div className="flex flex-col md:gap-8 gap-4 ">
-                            <h2 className="text-black text-2xl md:text-[32px] lg:text-[42px] sm:text-[34px] font-bold">
+                            <h2 className=" text-black 
+                                text-2xl 
+                                sm:text-[34px] 
+                                md:text-[32px] 
+                                lg:text-[42px]
+                                font-bold
+                                max-[400px]:text-xl
+                                ">
                                 Genuine connections for Free
                             </h2>
-                            <h3 className="text-black text-sm sm:text-lg md:text-xl font-semibold">
+                            <h3 className="text-black  max-[400px]:text-xs text-sm sm:text-lg md:text-xl font-semibold">
                                 It’s always FREE to see profiles, connect, and take a Leap online.
                             </h3>
                         </div>
@@ -134,10 +141,15 @@ export default function MobileContent() {
                     <div className="w-full md:w-5/12">
                         <div className="flex flex-col gap-3.5 ">
                             <div className="flex flex-col md:gap-8 gap-4">
-                                <h2 className="text-black text-2xl md:text-[32px] lg:text-[42px] sm:text-[34px] font-bold sm:pe-10 lg:pe-38 pe-0">
+                                <h2 className="text-black  text-2xl 
+                                sm:text-[34px] 
+                                md:text-[32px] 
+                                lg:text-[42px]
+                                font-bold
+                                max-[400px]:text-xl sm:pe-10 lg:pe-38 pe-0">
                                     Go OFFLINE Like... in real life.
                                 </h2>
-                                <h3 className="text-black text-sm sm:text-lg md:text-xl font-semibold">
+                                <h3 className="text-black  max-[400px]:text-xs text-sm sm:text-lg md:text-xl font-semibold">
                                     Leap Social hosts some of the largest singles events in the world!
                                     Our Ai matchmaker even suggests who to speak to.
                                 </h3>
