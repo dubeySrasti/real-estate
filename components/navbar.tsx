@@ -10,6 +10,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
 
 
   return (
@@ -17,8 +18,8 @@ export default function Navbar() {
       <nav className="bg-white shadow-[0_4px_4px_rgba(0,0,0,0.08)] sticky w-full top-0 left-0 z-50">
 
         {/* Topbar */}
-        <div className="w-full bg-gray-900 text-white text-xs sm:text-sm py-2 px-2 md:px-25 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex gap-3 sm:gap-5">
+        <div className="w-full bg-gray-900 text-white text-xs sm:text-sm py-2 sm:px-6 md:px-25 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex max-[400px]:gap-[15px] gap-8 md:gap-5">
             <a href="tel:8886886822" className="hover:text-gray-300 transition flex items-center gap-1 sm:gap-2">
               <Image src="/assets/images/svg/phone.svg" className="w-[18px] h-[18px] max-[375px]:w-[14px] max-[375px]:h-[14px]" width={18} height={18} alt="phone" />
               Tel: 888 688 6822
@@ -117,37 +118,75 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* MOBILE TOGGLE + MENU */}
-            <div className="lg:hidden relative">
+           {/* MOBILE TOGGLE + MENU */}
+<div className="lg:hidden relative">
 
-              {/* Hamburger Button */}
-              <div
-                className={`nav-toggle ${menuOpen ? "active" : ""}`}
-                onClick={() => setMenuOpen(!menuOpen)}
+  {/* Hamburger Button */}
+  <div
+    className={`nav-toggle ${menuOpen ? "active" : ""}`}
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  {/* Mobile Menu */}
+  {menuOpen && (
+    <div className="nav-menu absolute top-10 right-0 w-[240px] bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-4 space-y-3 z-30">
+
+      <Link href="/" className="block text-[var(--textDark)] font-semibold">
+        Home
+      </Link>
+
+      <Link href="/post" className="block text-[var(--textDark)] font-semibold">
+        Your Post
+      </Link>
+
+      <Link href="/about" className="block text-[var(--textDark)] font-semibold">
+        About Us
+      </Link>
+
+      {/* MOBILE PROPERTY DROPDOWN */}
+      <div>
+        <button
+          onClick={() => setMobilePropertyOpen(!mobilePropertyOpen)}
+          className="flex justify-between items-center w-full text-[var(--textDark)] font-semibold"
+        >
+          Property
+          <Image
+            src="/assets/images/svg/down-arrow.svg"
+            width={16}
+            height={16}
+            alt="arrow"
+            className={`transition ${mobilePropertyOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+
+        {mobilePropertyOpen && (
+          <div className="mt-2 ml-3 space-y-2">
+            {["Flat", "Apartment", "Hostel", "Office", "Other"].map((item, i) => (
+              <Link
+                key={i}
+                href="/dashboard"
+                onClick={() => setMenuOpen(false)}
+                className="block text-sm text-gray-600 font-medium hover:text-[var(--primary)]"
               >
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+                {item}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
 
-              {/* Mobile Menu */}
-              {menuOpen && (
-                <div className="
-                nav-menu absolute top-10 right-0 w-[220px]
-                bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.1)]
-                p-4 space-y-2
-              ">
-                  <Link href="/" className="block text-[var(--textDark)] font-semibold">Home</Link>
-                  <Link href="/about" className="block text-[var(--textDark)] font-semibold">About</Link>
-                  <Link href="/services" className="block text-[var(--textDark)] font-semibold">Services</Link>
-                  <Link href="/contact" className="block text-[var(--textDark)] font-semibold">Contact</Link>
+      <button className="bg-[#D4D5FF] text-[#1B1C57] w-full py-[10px] rounded-full text-sm font-semibold mt-2">
+        Sign Up!
+      </button>
 
-                  <button className="bg-[#D4D5FF] text-[#1B1C57] px-6 py-[9px] rounded-full text-sm font-semibold transition">
-                    Sign Up!
-                  </button>
-                </div>
-              )}
-            </div>
+    </div>
+  )}
+</div>
+
 
           </div>
         </div>
