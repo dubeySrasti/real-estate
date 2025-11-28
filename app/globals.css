@@ -7,12 +7,13 @@
   --primary: #0033A4;
   --secondary: #1B1C57;
   --black: #000000;
-  /* --textBlack:#1B1C57; */
   --textLight: #94A3B8;
   --border: #B6B6B64D;
   --gray: #B0B0B01A;
   --textDark: #1A1E25;
-
+  --cardBg: #EDF2F7;
+  --subtitle: #65676B;
+  --accent: #170085;
 }
 
 @theme inline {
