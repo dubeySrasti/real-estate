@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import NotificationDropdown from "./notificationDropdown";
 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
+  const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
 
 
   return (
@@ -55,12 +56,12 @@ const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-4">
-              {[{ name: "Home", path: "/" }, { name: "Your Post", path: "/post" }, { name: "About Us", path: "/about" }].map((item, i) => (
+            <div className="hidden lg:flex items-center gap-2 xl:gap-4 flex-1 justify-center">
+              {[{ name: "Home", path: "/" }, { name: "Your Post", path: "/yourPost" }, { name: "About Us", path: "/about" }].map((item, i) => (
                 <Link
                   key={i}
                   href={item.path}
-                  className={`px-4 py-2 text-sm font-semibold rounded-full border transition
+                  className={`px-3 xl:px-4 py-2 text-sm font-semibold rounded-full border transition whitespace-nowrap
                   ${pathname === item.path
                       ? "bg-[var(--primary)] text-white border-[var(--primary)]"
                       : "bg-white text-[var(--textDark)] border-[var(--border)] hover:bg-gray-100 hover:text-gray-600 hover:border-gray-300"
@@ -74,7 +75,7 @@ const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
               <div className="relative">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className={`flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full border transition
+                  className={`flex items-center gap-2 px-3 xl:px-4 py-2 text-sm font-semibold rounded-full border transition whitespace-nowrap
                   ${pathname === "/dashboard"
                       ? "bg-[var(--primary)] text-white border-[var(--primary)]"
                       : "bg-white text-[var(--textDark)] border-[var(--border)] hover:bg-gray-100 hover:text-gray-600 hover:border-gray-300"
@@ -108,84 +109,93 @@ const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
             </div>
 
             {/* Desktop Right */}
-            <div className="hidden lg:flex items-center gap-4">
-              <div className="flex items-center bg-white border border-[var(--border)] rounded-full px-4 py-2 shadow-sm hover:border-[#0033a4]">
-                <Image src="/assets/images/svg/search.svg" width={18} height={18} alt="search" className="opacity-70" />
-                <input type="text" placeholder="Search anything..." className="ml-3 outline-none text-sm text-gray-700 bg-transparent w-48" />
+            <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+              <div className="flex items-center bg-white border border-[var(--border)] rounded-full px-3 xl:px-4 py-2 shadow-sm hover:border-[var(--accent)] focus-within:border-[var(--accent)] focus-within:ring-2 focus-within:ring-[var(--accent)]/20 transition-all duration-200">
+                <Image src="/assets/images/svg/search.svg" width={18} height={18} alt="search" className="opacity-70 flex-shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="ml-2 outline-none text-sm text-gray-700 bg-transparent w-24 xl:w-40 placeholder-gray-400 focus:placeholder-gray-300"
+                />
               </div>
-              <button className="bg-[#D4D5FF] text-[#1B1C57] px-4 py-[9px] rounded-full text-sm font-semibold transition">
-                Sign Up!
-              </button>
+              <NotificationDropdown />
+              <Link href="/login">
+                <button className="bg-[#D4D5FF] text-[#1B1C57] px-3 xl:px-4 py-[9px] rounded-full text-sm font-semibold transition-all duration-300 hover:bg-[#170085] hover:text-white hover:scale-105 hover:shadow-lg cursor-pointer whitespace-nowrap">
+                  Sign Up!
+                </button>
+              </Link>
             </div>
 
-           {/* MOBILE TOGGLE + MENU */}
-<div className="lg:hidden relative">
+            {/* MOBILE TOGGLE + MENU */}
+            <div className="lg:hidden relative">
 
-  {/* Hamburger Button */}
-  <div
-    className={`nav-toggle ${menuOpen ? "active" : ""}`}
-    onClick={() => setMenuOpen(!menuOpen)}
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  {/* Mobile Menu */}
-  {menuOpen && (
-    <div className="nav-menu absolute top-10 right-0 w-[240px] bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-4 space-y-3 z-30">
-
-      <Link href="/" className="block text-[var(--textDark)] font-semibold">
-        Home
-      </Link>
-
-      <Link href="/post" className="block text-[var(--textDark)] font-semibold">
-        Your Post
-      </Link>
-
-      <Link href="/about" className="block text-[var(--textDark)] font-semibold">
-        About Us
-      </Link>
-
-      {/* MOBILE PROPERTY DROPDOWN */}
-      <div>
-        <button
-          onClick={() => setMobilePropertyOpen(!mobilePropertyOpen)}
-          className="flex justify-between items-center w-full text-[var(--textDark)] font-semibold"
-        >
-          Property
-          <Image
-            src="/assets/images/svg/down-arrow.svg"
-            width={16}
-            height={16}
-            alt="arrow"
-            className={`transition ${mobilePropertyOpen ? "rotate-180" : ""}`}
-          />
-        </button>
-
-        {mobilePropertyOpen && (
-          <div className="mt-2 ml-3 space-y-2">
-            {["Flat", "Apartment", "Hostel", "Office", "Other"].map((item, i) => (
-              <Link
-                key={i}
-                href="/dashboard"
-                onClick={() => setMenuOpen(false)}
-                className="block text-sm text-gray-600 font-medium hover:text-[var(--primary)]"
+              {/* Hamburger Button */}
+              <div
+                className={`nav-toggle ${menuOpen ? "active" : ""}`}
+                onClick={() => setMenuOpen(!menuOpen)}
               >
-                {item}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
 
-      <button className="bg-[#D4D5FF] text-[#1B1C57] w-full py-[10px] rounded-full text-sm font-semibold mt-2">
-        Sign Up!
-      </button>
+              {/* Mobile Menu */}
+              {menuOpen && (
+                <div className="nav-menu absolute top-10 right-0 w-[240px] bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-4 space-y-3 z-30">
 
-    </div>
-  )}
-</div>
+                  <Link href="/" className="block text-[var(--textDark)] font-semibold">
+                    Home
+                  </Link>
+
+                  <Link href="/yourPost" className="block text-[var(--textDark)] font-semibold">
+                    Your Post
+                  </Link>
+
+                  <Link href="/about" className="block text-[var(--textDark)] font-semibold">
+                    About Us
+                  </Link>
+
+                  {/* MOBILE PROPERTY DROPDOWN */}
+                  <div>
+                    <button
+                      onClick={() => setMobilePropertyOpen(!mobilePropertyOpen)}
+                      className="flex justify-between items-center w-full text-[var(--textDark)] font-semibold"
+                    >
+                      Property
+                      <Image
+                        src="/assets/images/svg/down-arrow.svg"
+                        width={16}
+                        height={16}
+                        alt="arrow"
+                        className={`transition ${mobilePropertyOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+
+                    {mobilePropertyOpen && (
+                      <div className="mt-2 ml-3 space-y-2">
+                        {["Flat", "Apartment", "Hostel", "Office", "Other"].map((item, i) => (
+                          <Link
+                            key={i}
+                            href="/dashboard"
+                            onClick={() => setMenuOpen(false)}
+                            className="block text-sm text-gray-600 font-medium hover:text-[var(--primary)]"
+                          >
+                            {item}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <Link href="/login">
+                    <button className="bg-[#D4D5FF] text-[#1B1C57] w-full py-[10px] rounded-full text-sm font-semibold mt-2 hover:bg-[#170085] hover:text-white transition">
+                      Sign Up!
+                    </button>
+                  </Link>
+
+                </div>
+              )}
+            </div>
 
 
           </div>

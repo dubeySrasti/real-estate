@@ -16,7 +16,7 @@ export default function AgentList() {
             <Navbar />
 
             {/* Main Content */}
-            <div className="min-h-screen bg-[#fff] pt-6 sm:pt-8 md:pt-[30px] pb-20 sm:pb-32 md:pb-[200px] px-4 min-[375px]:px-6 min-[480px]:px-8 max-[575px]:px-10 sm:px-10 md:px-12 lg:px-16 xl:px-20 2xl:px-24 flex flex-col gap-6 sm:gap-8 md:gap-[30px]">
+            <div className="min-h-screen bg-[#fff] pt-[30px] pb-20 sm:pb-32 md:pb-[200px] px-5 md:px-17 lg:px-16 xl:px-20 2xl:px-24 flex flex-col gap-6 sm:gap-8 md:gap-[30px]">
 
                 {/* Page Title */}
                 <h1 className="text-2xl sm:text-3xl md:text-[32px] font-bold text-black">

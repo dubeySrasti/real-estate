@@ -28,40 +28,44 @@ export default function HouseTourSection() {
                             House Detail
                         </h3>
                         {/* House Details */}
-                        <div className="grid grid-cols-2 gap-y-4 text-[#3C4563] font-medium text-base">
-                            <div className="flex gap-4 items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 text-[#3C4563] font-medium text-sm sm:text-base">
+                            <div className="flex gap-2 sm:gap-4 items-center">
                                 <Image
                                     src="/assets/images/svg/bedroom.svg"
-                                    width={32}
-                                    height={32}
+                                    width={24}
+                                    height={24}
                                     alt="bedrooms"
+                                    className="w-6 h-6 sm:w-8 sm:h-8"
                                 />
                                 <span>4 Bedrooms</span>
                             </div>
-                            <div className="flex gap-4 items-center">
+                            <div className="flex gap-2 sm:gap-4 items-center">
                                 <Image
                                     src="/assets/images/svg/bathrooms.svg"
-                                    width={32}
-                                    height={32}
+                                    width={24}
+                                    height={24}
                                     alt="bathrooms"
+                                    className="w-6 h-6 sm:w-8 sm:h-8"
                                 />
                                 <span>2 Bathrooms</span>
                             </div>
-                            <div className="flex gap-4 items-center">
+                            <div className="flex gap-2 sm:gap-4 items-center">
                                 <Image
                                     src="/assets/images/svg/carport.svg"
-                                    width={32}
-                                    height={32}
+                                    width={24}
+                                    height={24}
                                     alt="car"
+                                    className="w-6 h-6 sm:w-8 sm:h-8"
                                 />
                                 <span>1 Carport</span>
                             </div>
-                            <div className="flex gap-4 items-center">
+                            <div className="flex gap-2 sm:gap-4 items-center">
                                 <Image
                                     src="/assets/images/svg/floors.svg"
-                                    width={32}
-                                    height={32}
+                                    width={24}
+                                    height={24}
                                     alt="floor"
+                                    className="w-6 h-6 sm:w-8 sm:h-8"
                                 />
                                 <span>2 Floors</span>
                             </div>
@@ -100,7 +104,7 @@ export default function HouseTourSection() {
                         "
                         >
                             <Image
-                                src="/assets/images/svg/phone_card.svg"
+                                src="/assets/images/svg/call-icon.svg"
                                 width={24}
                                 height={24}
                                 alt="call"

@@ -303,7 +303,7 @@ export default function PropertyData() {
 
             <div className="flex w-full gap-3">
               <button className="flex-1 bg-[#170085] text-white py-1.5 text-sm font-semibold flex items-center justify-center gap-1.5 rounded-full">
-                <Image src="/assets/images/svg/phone_card.svg" width={18} height={18} alt="call" className="invert brightness-0" />
+                <Image src="/assets/images/svg/call-icon.svg" width={18} height={18} alt="call" className="invert brightness-0" />
                 Call
               </button>
 

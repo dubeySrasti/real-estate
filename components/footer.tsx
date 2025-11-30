@@ -125,20 +125,40 @@ export default function Footer() {
           <div className="col-span-6 lg:col-span-2 sm:col-span-6 md:col-span-1 flex flex-col gap-6">
             <h4 className="font-semibold text-lg text-white">Property</h4>
             <ul className="text-[#C5CADC] text-sm font-light flex flex-col gap-4">
-              <li>House</li>
-              <li>Apartment</li>
-              <li>Villa</li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">House</li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">Apartment</li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">Villa</li>
             </ul>
           </div>
 
-          {/* ARTICLE */}
+          {/* QUICK LINKS */}
           <div className="col-span-6 sm:col-span-6 md:col-span-1 lg:col-span-2 flex flex-col gap-6">
-            <h4 className="font-semibold text-lg text-white">Article</h4>
+            <h4 className="font-semibold text-lg text-white">Quick Links</h4>
             <ul className="text-[#C5CADC] text-sm font-light flex flex-col gap-4">
-              <li>New Article</li>
-              <li>Popular Article</li>
-              <li>Most Read</li>
-              <li>Tips & Tricks</li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/">Home</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/dashboard">Dashboard</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/agentList">Agent List</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/propertyDetails">Property Details</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/yourPost">Your Post</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/wishlist">Wishlist</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/map">Map</a>
+              </li>
+              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+                <a href="/searchList">Search List</a>
+              </li>
             </ul>
           </div>
 

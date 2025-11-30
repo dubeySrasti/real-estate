@@ -14,6 +14,7 @@
   --cardBg: #EDF2F7;
   --subtitle: #65676B;
   --accent: #170085;
+  --textGray:#7D7F88;
 }
 
 @theme inline {
@@ -130,6 +131,31 @@ body {
   -webkit-text-stroke: 1px #170085; 
 }
 
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #170085;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #407BFF;
+}
+
+/* Firefox Custom Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #170085 #f1f1f1;
+}
+
 
 
 /*  Mobile screen (0–575px) */
@@ -197,4 +223,13 @@ body {
 
 .nav-toggle.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Agent List Hover Effects */
+.hover-accent-text:hover {
+  color: #170085;
+}
+
+.hover-primary-text:hover {
+  color: #0033A4;
 }
