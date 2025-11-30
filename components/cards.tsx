@@ -4,7 +4,7 @@ import PropertyCardsSlider from "./propertyCardsSlider";
 
 export default function RecentSearchSlider() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const [activeTab, setActiveTab] = useState<number | null>(0);
+  const [activeTab, setActiveTab] = useState<number | undefined>(0);
   const [activeArrow, setActiveArrow] = useState<"left" | "right" | null>(null);
   const [showAll, setShowAll] = useState(false);
 
