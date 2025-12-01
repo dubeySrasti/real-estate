@@ -80,20 +80,20 @@ export default function Footer() {
               <div className="flex flex-col gap-6">
 
                 {/* APP BUTTONS → always row */}
-                <div className="flex gap-3 flex-wrap sm:flex-nowrap app-buttons">
-                  <button className="flex gap-4 bg-white py-2 px-6 rounded-full">
-                    <img src="/assets/images/svg/apple.svg" className="w-5" />
-                    <div className="flex flex-col items-start">
-                      <h5 className="text-xs font-normal text-black">Download on the</h5>
-                      <h6 className="text-sm font-bold text-black">App Store</h6>
+                <div className="flex gap-2 sm:gap-3 flex-wrap sm:flex-nowrap app-buttons">
+                  <button className="flex gap-2 sm:gap-4 bg-white py-1.5 sm:py-2 px-3 sm:px-6 rounded-full min-w-0 text-xs sm:text-sm">
+                    <img src="/assets/images/svg/apple.svg" className="w-4 sm:w-5 flex-shrink-0" />
+                    <div className="flex flex-col items-start min-w-0">
+                      <h5 className="text-[10px] sm:text-xs font-normal text-black leading-tight">Download on the</h5>
+                      <h6 className="text-[11px] sm:text-sm font-bold text-black leading-tight">App Store</h6>
                     </div>
                   </button>
 
-                  <button className="flex gap-4 bg-white py-2 px-6 rounded-full">
-                    <img src="/assets/images/svg/google-play.svg" className="w-5" />
-                    <div className="flex flex-col items-start">
-                      <h5 className="text-xs font-normal text-black">Get in on</h5>
-                      <h6 className="text-sm font-bold text-black">Google Play</h6>
+                  <button className="flex gap-2 sm:gap-4 bg-white py-1.5 sm:py-2 px-3 sm:px-6 rounded-full min-w-0 text-xs sm:text-sm">
+                    <img src="/assets/images/svg/google-play.svg" className="w-4 sm:w-5 flex-shrink-0" />
+                    <div className="flex flex-col items-start min-w-0">
+                      <h5 className="text-[10px] sm:text-xs font-normal text-black leading-tight">Get in on</h5>
+                      <h6 className="text-[11px] sm:text-sm font-bold text-black leading-tight">Google Play</h6>
                     </div>
                   </button>
                 </div>

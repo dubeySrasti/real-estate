@@ -30,24 +30,24 @@ export default function PropertyData() {
     { label: "Furniture Type", icon: "/assets/images/svg/furniture.svg", value: "Furnished" },
   ];
   return (
-    <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 px-4 lg:px-10 py-10 bg-white gap-8 lg:gap-[45px]">
+    <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 px-2 sm:px-4 lg:px-10 py-6 sm:py-10 bg-white gap-4 sm:gap-8 lg:gap-[45px]">
 
       {/* LEFT SECTION */}
       <div className="col-span-12  md:col-span-6 lg:col-span-7 xl:col-span-8">
-        <div className="flex flex-col items-start gap-3.5">
+        <div className="flex flex-col items-start gap-3 sm:gap-3.5">
           {/* Top Badge */}
-          <span className="border border-[#25BA00] text-[#00B31D] text-sm px-3 py-1 rounded-md font-bold">
-            Available <span className="text-[#7D7F88] text-xs font-semibold"> 03 Jun, 2024</span>
+          <span className="border border-[#25BA00] text-[#00B31D] text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-md font-bold">
+            Available <span className="text-[#7D7F88] text-[10px] sm:text-xs font-semibold"> 03 Jun, 2024</span>
           </span>
 
           <div className="flex flex-col gap-1.5">
-            <h1 className="text-2xl font-bold text-black mb-0">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black mb-0 leading-tight">
               Entire Bromo mountain view Cabin in Surabaya
             </h1>
 
             {/* Location */}
-            <div className="flex items-center gap-1.5 text-[#0038FF] text-base font-bold cursor-pointer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            <div className="flex items-center gap-1.5 text-[#0038FF] text-sm sm:text-base font-bold cursor-pointer">
+              <svg width="14" height="14" className="sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
@@ -56,55 +56,55 @@ export default function PropertyData() {
             </div>
           </div>
           {/* Overview Card */}
-          <div className="border border-[#94A3B8] rounded-xl p-5 w-full">
-            <h2 className="text-xl text-[#1C2B38] font-bold border-b border-b-[#CEDADF] pb-3.5">
+          <div className="border border-[#94A3B8] rounded-xl p-3 sm:p-5 w-full">
+            <h2 className="text-lg sm:text-xl text-[#1C2B38] font-bold border-b border-b-[#CEDADF] pb-2 sm:pb-3.5">
               Hotel Overview
             </h2>
 
             {/* TABLE STYLE */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6 text-[15px] mt-3.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 sm:gap-y-5 gap-x-4 sm:gap-x-6 text-[15px] mt-3 sm:mt-3.5">
               {overviewData.map((item, index) => (
                 <div key={index} className="flex flex-col">
-                  <p className="text-[var(--textLight)] text-sm font-normal">{item.label}</p>
+                  <p className="text-[var(--textLight)] text-xs sm:text-sm font-normal">{item.label}</p>
 
-                  <p className="text-sm font-bold flex items-center gap-1 text-[#1C2B38]">
-                    <Image src={item.icon} width={18} height={18} alt={item.label} />
-                    {item.value}
+                  <p className="text-xs sm:text-sm font-bold flex items-center gap-1 text-[#1C2B38]">
+                    <Image src={item.icon} width={16} height={16} className="sm:w-[18px] sm:h-[18px]" alt={item.label} />
+                    <span className="break-words">{item.value}</span>
                   </p>
                 </div>
               ))}
             </div>
           </div>
           {/* Meal Type */}
-          <div className="w-full flex flex-col gap-3.5 border-b border-b-[#CEDADF] pb-3.5">
-            <p className="text-[var(--textDark)] text-lg font-bold">Meal Type</p>
+          <div className="w-full flex flex-col gap-3 sm:gap-3.5 border-b border-b-[#CEDADF] pb-3 sm:pb-3.5">
+            <p className="text-[var(--textDark)] text-base sm:text-lg font-bold">Meal Type</p>
 
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-6">
               {mealTypes.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-[#F9F5FF] text-[#7F56D9] px-2.5 py-1.5 rounded-md text-sm font-semibold text-[var(--textDark)]"
+                  className="flex items-center gap-1.5 sm:gap-2 bg-[#F9F5FF] text-[#7F56D9] px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-md text-xs sm:text-sm font-semibold text-[var(--textDark)]"
                 >
-                  <Image src={item.icon} width={18} height={18} alt={item.name} />
-                  {item.name}
+                  <Image src={item.icon} width={14} height={14} className="sm:w-[18px] sm:h-[18px] flex-shrink-0" alt={item.name} />
+                  <span className="whitespace-nowrap">{item.name}</span>
                 </div>
               ))}
             </div>
           </div>
           {/* Location & Public Fasilities*/}
-          <div className="w-full flex flex-col gap-3.5">
-            <p className="text-[var(--textDark)] text-lg font-bold">
+          <div className="w-full flex flex-col gap-3 sm:gap-3.5">
+            <p className="text-[var(--textDark)] text-base sm:text-lg font-bold">
               Location & Public Facilities
             </p>
 
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-6">
               {facilities.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-[#F9F5FF] text-[#7F56D9] px-2.5 py-1.5 rounded-md text-sm font-semibold text-[var(--textDark)]"
+                  className="flex items-center gap-1.5 sm:gap-2 bg-[#F9F5FF] text-[#7F56D9] px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-md text-xs sm:text-sm font-semibold text-[var(--textDark)]"
                 >
-                  <Image src={item.icon} width={18} height={18} alt={item.name} />
-                  {item.name}
+                  <Image src={item.icon} width={14} height={14} className="sm:w-[18px] sm:h-[18px] flex-shrink-0" alt={item.name} />
+                  <span className="whitespace-nowrap">{item.name}</span>
                 </div>
               ))}
             </div>
@@ -130,42 +130,42 @@ export default function PropertyData() {
 
           </div>
           {/* Rental Info */}
-          <div className="w-full flex flex-col gap-3.5   border-b border-b-[#CEDADF] pb-3.5">
-            <h2 className="text-[var(--textDark)] text-lg font-bold">
+          <div className="w-full flex flex-col gap-3 sm:gap-3.5 border-b border-b-[#CEDADF] pb-3 sm:pb-3.5">
+            <h2 className="text-[var(--textDark)] text-base sm:text-lg font-bold">
               Rental Info
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
               {/* Security Deposit */}
-              <div className="flex flex-col gap-2">
-                <p className="text-base font-bold text-[#1C2B38]">
+              <div className="flex flex-col gap-1.5 sm:gap-2">
+                <p className="text-sm sm:text-base font-bold text-[#1C2B38]">
                   Security Deposit
                 </p>
-                <p className="flex items-center gap-2.5 text-sm font-semibold text-[#495560]">
-                  <span className="w-2 h-2 bg-[#495560] rounded-full"></span>
+                <p className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[#495560]">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
                   ₹ 2,00,000
                 </p>
               </div>
 
               {/* Electricity */}
-              <div className="flex flex-col gap-2">
-                <p className="text-base font-bold text-[#1C2B38]">
+              <div className="flex flex-col gap-1.5 sm:gap-2">
+                <p className="text-sm sm:text-base font-bold text-[#1C2B38]">
                   Electricity
                 </p>
-                <p className="flex items-center gap-2.5 text-sm font-semibold text-[#495560]">
-                  <span className="w-2 h-2 bg-[#495560] rounded-full"></span>
+                <p className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[#495560]">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
                   ₹ 10 Per Unit
                 </p>
               </div>
 
               {/* Is Negotiable */}
-              <div className="flex flex-col gap-2">
-                <p className="text-base font-bold text-[#1C2B38]">
+              <div className="flex flex-col gap-1.5 sm:gap-2">
+                <p className="text-sm sm:text-base font-bold text-[#1C2B38]">
                   Is Negotiable
                 </p>
-                <p className="flex items-center gap-2.5 text-sm font-semibold text-[#495560]">
-                  <span className="w-2 h-2 bg-[#495560] rounded-full"></span>
+                <p className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[#495560]">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
                   No
                 </p>
               </div>
@@ -173,17 +173,17 @@ export default function PropertyData() {
             </div>
           </div>
           {/* Parking*/}
-          <div className="w-full flex flex-col gap-3.5 border-b border-b-[#CEDADF] pb-3.5">
-            <p className="text-[var(--textDark)] text-lg font-bold">Parking</p>
+          <div className="w-full flex flex-col gap-3 sm:gap-3.5 border-b border-b-[#CEDADF] pb-3 sm:pb-3.5">
+            <p className="text-[var(--textDark)] text-base sm:text-lg font-bold">Parking</p>
 
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-6">
               {parkingOptions.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-[#F9F5FF] text-[#7F56D9] px-2.5 py-1.5 rounded-md text-sm font-semibold text-[var(--textDark)]"
+                  className="flex items-center gap-1.5 sm:gap-2 bg-[#F9F5FF] text-[#7F56D9] px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-md text-xs sm:text-sm font-semibold text-[var(--textDark)]"
                 >
-                  <Image src={item.icon} width={18} height={18} alt={item.name} />
-                  {item.name}
+                  <Image src={item.icon} width={14} height={14} className="sm:w-[18px] sm:h-[18px] flex-shrink-0" alt={item.name} />
+                  <span className="whitespace-nowrap">{item.name}</span>
                 </div>
               ))}
             </div>
@@ -261,84 +261,84 @@ export default function PropertyData() {
 
       {/* RIGHT SECTION */}
       <div className="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-4 custom-right-box">
-        <div className="w-full flex flex-col items-center gap-6 py-6">
+        <div className="w-full flex flex-col items-center gap-4 sm:gap-6 py-4 sm:py-6">
 
           {/* Location Card */}
-          <div className="w-full bg-white px-6 md:px-8 py-5 rounded-2xl border border-[#E2E8F0] flex flex-col gap-3">
-            <p className="text-base font-bold text-[var(--textDark)]">Location</p>
+          <div className="w-full bg-white px-4 sm:px-6 md:px-8 py-4 sm:py-5 rounded-2xl border border-[#E2E8F0] flex flex-col gap-3">
+            <p className="text-sm sm:text-base font-bold text-[var(--textDark)]">Location</p>
 
-            <div className="bg-[#F4F4F5] py-3 px-5">
-              <p className="text-[#495560] text-sm font-semibold">Gulab Bag Colony</p>
+            <div className="bg-[#F4F4F5] py-2 sm:py-3 px-3 sm:px-5">
+              <p className="text-[#495560] text-xs sm:text-sm font-semibold">Gulab Bag Colony</p>
             </div>
 
             <div className="flex flex-col items-center">
-              <p className="text-sm font-semibold text-[#778088]">Subtotal</p>
-              <p className="text-3xl font-extrabold text-[#170085]">₹785 / Month</p>
+              <p className="text-xs sm:text-sm font-semibold text-[#778088]">Subtotal</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#170085]">₹785 / Month</p>
             </div>
 
-            <button className="w-full bg-[#170085] text-white py-2.5 rounded-xl font-bold text-xl">
+            <button className="w-full bg-[#170085] text-white py-2 sm:py-2.5 rounded-xl font-bold text-lg sm:text-xl">
               Rent
             </button>
 
-            <button className="w-full border border-[#E2E8F0] py-2.5 rounded-xl text-[#778088] text-base font-semibold flex justify-center gap-2">
-              <Image src="/assets/images/svg/share.svg" width={24} height={24} alt="share" />
-              Share The Activity
+            <button className="w-full border border-[#E2E8F0] py-2 sm:py-2.5 rounded-xl text-[#778088] text-sm sm:text-base font-semibold flex justify-center gap-2">
+              <Image src="/assets/images/svg/share.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="share" />
+              <span className="whitespace-nowrap">Share The Activity</span>
             </button>
           </div>
 
           {/* Agent Card */}
-          <div className="w-full py-8 px-6 md:px-10 rounded-2xl border border-[#E2E8F0] flex flex-col items-center gap-5">
+          <div className="w-full py-6 sm:py-8 px-4 sm:px-6 md:px-10 rounded-2xl border border-[#E2E8F0] flex flex-col items-center gap-4 sm:gap-5">
             <Image
               src="/assets/images/svg/avtar.svg"
-              width={74}
-              height={74}
+              width={60}
+              height={60}
               alt="Profile"
-              className="rounded-full object-cover aspect-square"
+              className="rounded-full object-cover aspect-square sm:w-[74px] sm:h-[74px]"
             />
 
             <div className="text-center">
-              <p className="text-lg font-bold text-black">Fisher Aliston</p>
-              <p className="text-[#65676B] text-sm font-semibold">Sales Training Consultant</p>
+              <p className="text-base sm:text-lg font-bold text-black">Fisher Aliston</p>
+              <p className="text-[#65676B] text-xs sm:text-sm font-semibold">Sales Training Consultant</p>
             </div>
 
-            <div className="flex w-full gap-3">
-              <button className="flex-1 bg-[#170085] text-white py-1.5 text-sm font-semibold flex items-center justify-center gap-1.5 rounded-full">
-                <Image src="/assets/images/svg/call-icon.svg" width={18} height={18} alt="call" className="invert brightness-0" />
+            <div className="flex w-full gap-2 sm:gap-3">
+              <button className="flex-1 bg-[#170085] text-white py-1.5 text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-1.5 rounded-full">
+                <Image src="/assets/images/svg/call-icon.svg" width={16} height={16} className="sm:w-[18px] sm:h-[18px] invert brightness-0" alt="call" />
                 Call
               </button>
 
-              <button className="flex-1 border border-[#E2E8F0] py-1.5 text-[#718096] text-sm font-semibold flex items-center justify-center gap-1.5 rounded-full">
-                <Image src="/assets/images/svg/uil-comment.svg" width={18} height={18} alt="whatsapp" />
+              <button className="flex-1 border border-[#E2E8F0] py-1.5 text-[#718096] text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-1.5 rounded-full">
+                <Image src="/assets/images/svg/uil-comment.svg" width={16} height={16} className="sm:w-[18px] sm:h-[18px]" alt="whatsapp" />
                 WhatsApp
               </button>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="w-full rounded-2xl border border-[#E2E8F0] py-5 px-6 flex flex-col gap-4">
-            <p className="font-bold text-base text-[var(--textDark)] border-b pb-3">Contact Info</p>
+          <div className="w-full rounded-2xl border border-[#E2E8F0] py-4 sm:py-5 px-4 sm:px-6 flex flex-col gap-3 sm:gap-4">
+            <p className="font-bold text-sm sm:text-base text-[var(--textDark)] border-b pb-2 sm:pb-3">Contact Info</p>
 
             {/* Phone */}
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#F7F3FF] rounded-full flex items-center justify-center">
-                <Image src="/assets/images/svg/call.svg" width={24} height={24} alt="call" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#F7F3FF] rounded-full flex items-center justify-center flex-shrink-0">
+                <Image src="/assets/images/svg/call.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="call" />
               </div>
 
-              <div>
-                <p className="text-sm font-medium text-[#ABAFB1]">Alternative Number</p>
-                <p className="font-bold text-sm text-[var(--textDark)]">+91 91234 56789</p>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs sm:text-sm font-medium text-[#ABAFB1]">Alternative Number</p>
+                <p className="font-bold text-xs sm:text-sm text-[var(--textDark)] break-all">+91 91234 56789</p>
               </div>
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#F7F3FF] rounded-full flex items-center justify-center">
-                <Image src="/assets/images/svg/message.svg" width={24} height={24} alt="email" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#F7F3FF] rounded-full flex items-center justify-center flex-shrink-0">
+                <Image src="/assets/images/svg/message.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="email" />
               </div>
 
-              <div>
-                <p className="text-sm font-medium text-[#ABAFB1]">Email</p>
-                <p className="font-bold text-sm text-[var(--textDark)]">shoprentals.indore@gmail.com</p>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs sm:text-sm font-medium text-[#ABAFB1]">Email</p>
+                <p className="font-bold text-xs sm:text-sm text-[var(--textDark)] break-all">shoprentals.indore@gmail.com</p>
               </div>
             </div>
           </div>

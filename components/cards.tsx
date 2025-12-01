@@ -129,7 +129,7 @@ export default function RecentSearchSlider() {
       <div className="lg:hidden flex justify-center px-4">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="px-8 py-3 bg-[#170085] hover:bg-[#407BFF] text-white rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+          className="px-6 py-2 bg-[#170085] hover:bg-[#407BFF] text-white rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
         >
           {showAll ? "Show Less" : "View More"}
         </button>

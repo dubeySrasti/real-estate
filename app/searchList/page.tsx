@@ -110,7 +110,7 @@ export default function SearchList() {
     const FilterButton = ({ label, active = false, onClick }: { label: string; active?: boolean; onClick?: () => void }) => (
         <button
             onClick={onClick}
-            className={`px-4 py-1 rounded-full text-base transition-all ${active
+            className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm transition-all ${active
                 ? 'bg-[#170085] text-white border-0 font-medium'
                 : 'bg-[#F2F2F3] text-[#7D7F88] border border-[#E3E3E7] font-medium hover:bg-gray-200'
                 }`}
@@ -224,7 +224,7 @@ export default function SearchList() {
                                     <div className="flex flex-col gap-2.5 px-3 pb-3">
                                         {/* Room rent */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-lg font-bold text-[#1A1E25]">Room rent</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Room rent</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Any" active={roomRent === "Any"} onClick={() => setRoomRent("Any")} />
                                                 <FilterButton label="Monthly" active={roomRent === "Monthly"} onClick={() => setRoomRent("Monthly")} />
@@ -235,7 +235,7 @@ export default function SearchList() {
 
                                         {/* Furniture */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">Furniture</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Furniture</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Any" active={furniture === "Any"} onClick={() => setFurniture("Any")} />
                                                 <FilterButton label="Full" active={furniture === "Full"} onClick={() => setFurniture("Full")} />
@@ -246,7 +246,7 @@ export default function SearchList() {
 
                                         {/* BHK Type */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">BHK Type</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">BHK Type</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Any" active={bhkType === "Any"} onClick={() => setBhkType("Any")} />
                                                 <FilterButton label="1 BHK" active={bhkType === "1 BHK"} onClick={() => setBhkType("1 BHK")} />
@@ -257,7 +257,7 @@ export default function SearchList() {
 
                                         {/* Listed by */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">Listed by</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Listed by</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Owner" active={listedBy === "Owner"} onClick={() => setListedBy("Owner")} />
                                                 <FilterButton label="Agent" active={listedBy === "Agent"} onClick={() => setListedBy("Agent")} />
@@ -266,7 +266,7 @@ export default function SearchList() {
 
                                         {/* Bath Type */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">Bath Type</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Bath Type</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Any" active={bathType === "Any"} onClick={() => setBathType("Any")} />
                                                 <FilterButton label="Coman" active={bathType === "Coman"} onClick={() => setBathType("Coman")} />
@@ -276,7 +276,7 @@ export default function SearchList() {
 
                                         {/* Property Type */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">Property Type</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Property Type</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Hotal" active={propertyType === "Hotal"} onClick={() => setPropertyType("Hotal")} />
                                                 <FilterButton label="Pg" active={propertyType === "Pg"} onClick={() => setPropertyType("Pg")} />
@@ -285,7 +285,7 @@ export default function SearchList() {
 
                                         {/* Electricity */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">Electricity</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Electricity</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Any" active={electricity === "Any"} onClick={() => setElectricity("Any")} />
                                                 <FilterButton label="Include" active={electricity === "Include"} onClick={() => setElectricity("Include")} />
@@ -294,7 +294,7 @@ export default function SearchList() {
 
                                         {/* Living preference */}
                                         <div className="flex flex-col gap-2">
-                                            <p className="text-base font-bold text-[#1A1E25]">Living preference</p>
+                                            <p className="text-sm sm:text-base font-bold text-[#1A1E25]">Living preference</p>
                                             <div className="flex flex-wrap gap-2">
                                                 <FilterButton label="Any" active={livingPreference === "Any"} onClick={() => setLivingPreference("Any")} />
                                                 <FilterButton label="Male" active={livingPreference === "Male"} onClick={() => setLivingPreference("Male")} />
@@ -312,9 +312,9 @@ export default function SearchList() {
                             <div className="md:hidden flex justify-end mb-4">
                                 <button
                                     onClick={() => setShowFilters(!showFilters)}
-                                    className="px-4 py-3 bg-[#170085] text-white rounded-lg font-medium flex items-center justify-center gap-2"
+                                    className="px-3 py-2 bg-[#170085] text-white rounded-lg text-sm font-medium flex items-center justify-center gap-1.5"
                                 >
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                                     </svg>
                                     {showFilters ? "Hide Filters" : "Show Filters"}
@@ -408,7 +408,7 @@ export default function SearchList() {
                                 <div className="lg:hidden flex justify-center mt-8">
                                     <button
                                         onClick={() => setShowAllCards(true)}
-                                        className="px-8 py-3 bg-[#170085] text-white rounded-lg font-medium hover:bg-[#1a0099] transition-colors"
+                                        className="px-6 py-2 bg-[#170085] text-white rounded-lg text-sm font-medium hover:bg-[#1a0099] transition-colors"
                                     >
                                         View More
                                     </button>
