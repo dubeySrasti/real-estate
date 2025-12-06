@@ -76,7 +76,7 @@ export default function RecentSearchSlider() {
                   key={i}
                   onClick={() => setActiveTab(i)}
                   className={`
-                    flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2 
+                    flex items-center gap-2 px-4 py-1.5 sm:px-6 sm:py-2 cursor-pointer
                     rounded-full text-sm sm:text-lg font-medium flex-shrink-0
                     border border-[#E0E3EB] transition-all duration-300
                     ${isActive ? "bg-[#D4D5FF] text-[#0E1735]" : "text-[#888B97]"}
@@ -98,7 +98,7 @@ export default function RecentSearchSlider() {
             <button
               onClick={scrollLeft}
               className={`
-                md:w-13 md:h-10 lg:w-15 lg:h-13 flex justify-center items-center rounded-4xl transition
+                cursor-pointer md:w-13 md:h-10 lg:w-15 lg:h-13 flex justify-center items-center rounded-4xl transition
                 ${activeArrow === "left" ? "bg-[#0E1735]" : "bg-[#E0E3EB]"}
               `}
             >
@@ -110,7 +110,7 @@ export default function RecentSearchSlider() {
             <button
               onClick={scrollRight}
               className={`
-                md:w-13 md:h-10 lg:w-15 lg:h-13 flex justify-center items-center rounded-4xl transition
+                cursor-pointer md:w-13 md:h-10 lg:w-15 lg:h-13 flex justify-center items-center rounded-4xl transition
                 ${activeArrow === "right" ? "bg-[#0E1735]" : "bg-[#E0E3EB]"}
               `}
             >

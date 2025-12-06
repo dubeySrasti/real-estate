@@ -81,18 +81,18 @@ export default function Footer() {
 
                 {/* APP BUTTONS → always row */}
                 <div className="flex gap-2 sm:gap-3 flex-wrap sm:flex-nowrap app-buttons">
-                  <button className="flex gap-2 sm:gap-4 bg-white py-1.5 sm:py-2 px-3 sm:px-6 rounded-full min-w-0 text-xs sm:text-sm">
+                  <button className="flex gap-2 sm:gap-4 bg-white py-1.5 sm:py-2 px-3 sm:px-6 rounded-full min-w-0 text-xs sm:text-sm w-[135px] sm:w-[175px] md:w-[185px]">
                     <img src="/assets/images/svg/apple.svg" className="w-4 sm:w-5 flex-shrink-0" />
                     <div className="flex flex-col items-start min-w-0">
-                      <h5 className="text-[10px] sm:text-xs font-normal text-black leading-tight">Download on the</h5>
+                      <h5 className="text-[10px] sm:text-xs font-normal text-black leading-tight whitespace-nowrap">Download on the</h5>
                       <h6 className="text-[11px] sm:text-sm font-bold text-black leading-tight">App Store</h6>
                     </div>
                   </button>
 
-                  <button className="flex gap-2 sm:gap-4 bg-white py-1.5 sm:py-2 px-3 sm:px-6 rounded-full min-w-0 text-xs sm:text-sm">
+                  <button className="flex gap-2 sm:gap-4 bg-white py-1.5 sm:py-2 px-3 sm:px-6 rounded-full min-w-0 text-xs sm:text-sm w-[135px] sm:w-[175px] md:w-[185px]">
                     <img src="/assets/images/svg/google-play.svg" className="w-4 sm:w-5 flex-shrink-0" />
                     <div className="flex flex-col items-start min-w-0">
-                      <h5 className="text-[10px] sm:text-xs font-normal text-black leading-tight">Get in on</h5>
+                      <h5 className="text-[10px] sm:text-xs font-normal text-black leading-tight whitespace-nowrap">Get in on</h5>
                       <h6 className="text-[11px] sm:text-sm font-bold text-black leading-tight">Google Play</h6>
                     </div>
                   </button>
@@ -104,15 +104,15 @@ export default function Footer() {
                 </p>
 
                 <div className="hidden sm:block">
-                  <div className="flex gap-4">
-                    <a>
-                      <img src="/assets/images/svg/footer_face.svg" className="w-8" alt="facebook" />
+                  <div className="flex items-center gap-4">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110 cursor-pointer">
+                      <Image src="/assets/images/svg/footer_face.svg" width={32} height={32} className="w-8 transition-all duration-300 hover:opacity-80" alt="facebook" />
                     </a>
-                    <a>
-                      <img src="/assets/images/svg/footer_twit.svg" className="w-8" alt="twitter" />
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110 cursor-pointer">
+                      <Image src="/assets/images/svg/logo-twitter.svg" width={32} height={32} className="w-5 brightness-0 invert transition-all duration-300 hover:opacity-80" alt="twitter" />
                     </a>
-                    <a>
-                      <img src="/assets/images/svg/footer_inst.svg" className="w-8" alt="instagram" />
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110 cursor-pointer">
+                      <Image src="/assets/images/svg/footer_inst.svg" width={32} height={32} className="w-8 transition-all duration-300 hover:opacity-80" alt="instagram" />
                     </a>
                   </div>
                 </div>
@@ -125,9 +125,9 @@ export default function Footer() {
           <div className="col-span-6 lg:col-span-2 sm:col-span-6 md:col-span-1 flex flex-col gap-6">
             <h4 className="font-semibold text-lg text-white">Property</h4>
             <ul className="text-[#C5CADC] text-sm font-light flex flex-col gap-4">
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">House</li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">Apartment</li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">Villa</li>
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">House</li>
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">Apartment</li>
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">Villa</li>
             </ul>
           </div>
 
@@ -135,28 +135,28 @@ export default function Footer() {
           <div className="col-span-6 sm:col-span-6 md:col-span-1 lg:col-span-2 flex flex-col gap-6">
             <h4 className="font-semibold text-lg text-white">Quick Links</h4>
             <ul className="text-[#C5CADC] text-sm font-light flex flex-col gap-4">
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/">Home</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/dashboard">Dashboard</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/agentList">Agent List</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/propertyDetails">Property Details</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/yourPost">Your Post</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/wishlist">Wishlist</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/map">Map</a>
               </li>
-              <li className="cursor-pointer hover:text-[var(--primary)] hover:translate-x-1.5 transition-all duration-300">
+              <li className="cursor-pointer hover:text-[#3466e7] hover:translate-x-1.5 transition-all duration-300">
                 <a href="/searchList">Search List</a>
               </li>
             </ul>
@@ -168,18 +168,22 @@ export default function Footer() {
             <ul className="text-[#C5CADC] text-sm font-light flex flex-col gap-2 sm:gap-4 sm:items-start items-center">
               <li className="text-center sm:text-start">2464 Royal Ln. Mesa, New Jersey 45463</li>
               <li>(671) 555-0110</li>
-              <li>info@hounter.com</li>
+              <li>
+                <a href="mailto:info@hounter.com" className="hover:text-[#3466e7] transition-colors duration-300 cursor-pointer">
+                  info@hounter.com
+                </a>
+              </li>
             </ul>
             <div className="block sm:hidden">
               <div className="flex gap-4">
-                <a>
-                  <img src="/assets/images/svg/footer_face.svg" className="w-8" alt="facebook" />
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110 cursor-pointer">
+                  <img src="/assets/images/svg/footer_face.svg" className="w-8 transition-all duration-300 hover:opacity-80" alt="facebook" />
                 </a>
-                <a>
-                  <img src="/assets/images/svg/footer_twit.svg" className="w-8" alt="twitter" />
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110 cursor-pointer">
+                  <img src="/assets/images/svg/footer_twit.svg" className="w-8 transition-all duration-300 hover:opacity-80" alt="twitter" />
                 </a>
-                <a>
-                  <img src="/assets/images/svg/footer_inst.svg" className="w-8" alt="instagram" />
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110 cursor-pointer">
+                  <img src="/assets/images/svg/footer_inst.svg" className="w-8 transition-all duration-300 hover:opacity-80" alt="instagram" />
                 </a>
               </div>
             </div>

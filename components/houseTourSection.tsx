@@ -98,9 +98,10 @@ export default function HouseTourSection() {
                         </div>
 
                         <button
+                            onClick={() => window.location.href = "tel:+1234567890"}
                             className="
                             bg-[#170085] text-white text-sm md:text-base px-4 py-3 rounded-full font-semibold
-                            shadow-md hover:opacity-90 transition flex items-center gap-3
+                            shadow-md hover:opacity-90 transition flex items-center gap-3 cursor-pointer
                         "
                         >
                             <Image

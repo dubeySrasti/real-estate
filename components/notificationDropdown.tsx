@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface Notification {
@@ -18,6 +18,7 @@ interface Notification {
 
 export default function NotificationDropdown() {
     const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const [notifications, setNotifications] = useState<Notification[]>([
         {
             id: 1,
@@ -76,8 +77,25 @@ export default function NotificationDropdown() {
 
     const unreadCount = notifications.filter(n => !n.isRead).length;
 
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpen]);
+
     return (
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
             {/* Notification Bell Icon */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -97,7 +115,7 @@ export default function NotificationDropdown() {
                     />
                 </svg>
                 {unreadCount > 0 && (
-                    <span className="absolute top-1 right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-semibold">
+                    <span className="absolute top-0.5 right-0.5 w-[14px] h-[14px] bg-red-500 text-white text-[9px] rounded-full flex items-center justify-center font-semibold">
                         {unreadCount}
                     </span>
                 )}

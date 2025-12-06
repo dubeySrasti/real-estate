@@ -1,5 +1,5 @@
 "use client";
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +10,30 @@ interface PropertyCardsSliderProps {
 
 const PropertyCardsSlider = forwardRef<HTMLDivElement, PropertyCardsSliderProps>(
     ({ activeTab = 0, showAll = false }, ref) => {
+        const [likedItems, setLikedItems] = useState<number[]>([]);
+
+        const toggleLike = (e: React.MouseEvent, itemId: number) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setLikedItems(prev => 
+                prev.includes(itemId) 
+                    ? prev.filter(id => id !== itemId)
+                    : [...prev, itemId]
+            );
+        };
+
+        const handleWhatsApp = (e: React.MouseEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.open("https://wa.me/1234567890", "_blank");
+        };
+
+        const handleCall = (e: React.MouseEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = "tel:+1234567890";
+        };
+
         const cards = [
             {
                 id: 1,
@@ -103,11 +127,14 @@ const PropertyCardsSlider = forwardRef<HTMLDivElement, PropertyCardsSliderProps>
                                     className="object-cover rounded-t-2xl transition-transform duration-500 ease-out group-hover:scale-110 pointer-events-none"
                                 />
 
-                                <div className="absolute top-3 right-3 bg-[#272C35] rounded-full p-1.5 shadow pointer-events-none">
-                                    <svg width="18" height="18" fill="#ff4b4b" viewBox="0 0 24 24">
+                                <button 
+                                    onClick={(e) => toggleLike(e, item.id)}
+                                    className="absolute top-3 right-3 bg-[#272C35] rounded-full p-1.5 shadow cursor-pointer hover:bg-[#3a4150] transition-colors z-10"
+                                >
+                                    <svg width="18" height="18" fill={likedItems.includes(item.id) ? "#ff4b4b" : "none"} stroke={likedItems.includes(item.id) ? "none" : "#b3afafff"} strokeWidth="2" viewBox="0 0 24 24">
                                         <path d="M12 21s-6-4.35-9-7.97C-1.33 9.33.67 4.67 5 4.07A5.43 5.43 0 0112 7.33 5.43 5.43 0 0119 4.07c4.33.6 6.33 5.26 2 8.96C18 16.65 12 21 12 21z" />
                                     </svg>
-                                </div>
+                                </button>
 
                                 <div className="absolute bottom-3 right-3 bg-[#FCFCFC] text-[var(--textDark)] text-sm font-normal px-2 py-0.5 rounded-full pointer-events-none">
                                     1 / 11
@@ -157,13 +184,19 @@ const PropertyCardsSlider = forwardRef<HTMLDivElement, PropertyCardsSliderProps>
                                         </p>
                                     </div>
 
-                                    <div className="flex items-center gap-2 pointer-events-none">
-                                        <div className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center">
-                                            <Image src="/assets/images/svg/whatsapp.svg" width={14} height={14} alt="whatsapp" />
-                                        </div>
-                                        <div className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center">
-                                            <Image src="/assets/images/svg/call-icon.svg" width={14} height={14} alt="phone" />
-                                        </div>
+                                    <div className="flex items-center gap-2">
+                                        <button 
+                                            onClick={handleWhatsApp}
+                                            className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center hover:bg-green-50 hover:border-green-500 transition-colors cursor-pointer group"
+                                        >
+                                            <Image src="/assets/images/svg/whatsapp.svg" width={14} height={14} alt="whatsapp" className="group-hover:[filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(86deg)_brightness(118%)_contrast(119%)] transition-all" />
+                                        </button>
+                                        <button 
+                                            onClick={handleCall}
+                                            className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center hover:bg-blue-50 hover:border-blue-500 transition-colors cursor-pointer group"
+                                        >
+                                            <Image src="/assets/images/svg/call-icon.svg" width={14} height={14} alt="phone" className="group-hover:[filter:invert(45%)_sepia(100%)_saturate(1500%)_hue-rotate(190deg)_brightness(100%)_contrast(90%)] transition-all" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -187,11 +220,14 @@ const PropertyCardsSlider = forwardRef<HTMLDivElement, PropertyCardsSliderProps>
                                     className="object-cover rounded-t-2xl transition-transform duration-500 ease-out group-hover:scale-110 pointer-events-none"
                                 />
 
-                                <div className="absolute top-3 right-3 bg-[#272C35] rounded-full p-1.5 shadow pointer-events-none">
-                                    <svg width="18" height="18" fill="#ff4b4b" viewBox="0 0 24 24">
+                                <button 
+                                    onClick={(e) => toggleLike(e, item.id)}
+                                    className="absolute top-3 right-3 bg-[#272C35] rounded-full p-1.5 shadow cursor-pointer hover:bg-[#3a4150] transition-colors z-10"
+                                >
+                                    <svg width="18" height="18" fill={likedItems.includes(item.id) ? "#ff4b4b" : "none"} stroke={likedItems.includes(item.id) ? "none" : "#b3afafff"} strokeWidth="2" viewBox="0 0 24 24">
                                         <path d="M12 21s-6-4.35-9-7.97C-1.33 9.33.67 4.67 5 4.07A5.43 5.43 0 0112 7.33 5.43 5.43 0 0119 4.07c4.33.6 6.33 5.26 2 8.96C18 16.65 12 21 12 21z" />
                                     </svg>
-                                </div>
+                                </button>
 
                                 <div className="absolute bottom-3 right-3 bg-[#FCFCFC] text-[var(--textDark)] text-sm font-normal px-2 py-0.5 rounded-full pointer-events-none">
                                     1 / 11
@@ -241,13 +277,19 @@ const PropertyCardsSlider = forwardRef<HTMLDivElement, PropertyCardsSliderProps>
                                         </p>
                                     </div>
 
-                                    <div className="flex items-center gap-2 pointer-events-none">
-                                        <div className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center">
-                                            <Image src="/assets/images/svg/whatsapp.svg" width={14} height={14} alt="whatsapp" />
-                                        </div>
-                                        <div className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center">
-                                            <Image src="/assets/images/svg/call-icon.svg" width={14} height={14} alt="phone" />
-                                        </div>
+                                    <div className="flex items-center gap-2">
+                                        <button 
+                                            onClick={handleWhatsApp}
+                                            className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center hover:bg-green-50 hover:border-green-500 transition-colors cursor-pointer group"
+                                        >
+                                            <Image src="/assets/images/svg/whatsapp.svg" width={14} height={14} alt="whatsapp" className="group-hover:[filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(86deg)_brightness(118%)_contrast(119%)] transition-all" />
+                                        </button>
+                                        <button 
+                                            onClick={handleCall}
+                                            className="w-7 h-7 rounded-md border border-gray-300 flex items-center justify-center hover:bg-blue-50 hover:border-blue-500 transition-colors cursor-pointer group"
+                                        >
+                                            <Image src="/assets/images/svg/call-icon.svg" width={14} height={14} alt="phone" className="group-hover:[filter:invert(45%)_sepia(100%)_saturate(1500%)_hue-rotate(190deg)_brightness(100%)_contrast(90%)] transition-all" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>

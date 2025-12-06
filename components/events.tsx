@@ -43,7 +43,8 @@ export default function WhatWeMake() {
     <div
       className="
         flex 
-        gap-9 
+        gap-4 
+        sm:gap-9 
         px-6 
         overflow-x-auto 
         pb-6 
@@ -61,8 +62,10 @@ export default function WhatWeMake() {
             overflow-hidden 
             flex-shrink-0 
             snap-center
-            w-[213px] 
-            h-[460px]
+            w-[160px] 
+            sm:w-[213px] 
+            h-[340px] 
+            sm:h-[460px]
           "
         >
           <Image

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import NotificationDropdown from "./notificationDropdown";
@@ -12,6 +12,23 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [mobilePropertyOpen, setMobilePropertyOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
 
   return (
@@ -21,11 +38,11 @@ export default function Navbar() {
         {/* Topbar */}
         <div className="w-full bg-gray-900 text-white text-xs sm:text-sm py-2 sm:px-6 md:px-25 flex flex-col md:flex-row justify-between items-center">
           <div className="flex max-[400px]:gap-[15px] gap-8 md:gap-5">
-            <a href="tel:8886886822" className="hover:text-gray-300 transition flex items-center gap-1 sm:gap-2">
+            <a href="tel:8886886822" className="hover:text-gray-400 transition flex items-center gap-1 sm:gap-2">
               <Image src="/assets/images/svg/phone.svg" className="w-[18px] h-[18px] max-[375px]:w-[14px] max-[375px]:h-[14px]" width={18} height={18} alt="phone" />
               Tel: 888 688 6822
             </a>
-            <a href="mailto:contact@bkanconnect.com" className="hover:text-gray-300 transition flex items-center gap-1 sm:gap-2">
+            <a href="mailto:contact@bkanconnect.com" className="hover:text-gray-400 transition flex items-center gap-1 sm:gap-2">
               <Image
                 src="/assets/images/svg/email.svg"
                 width={18}
@@ -39,11 +56,23 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex gap-6">
-            <Image src="/assets/images/svg/logo-twitter.svg" width={18} height={18} alt="twitter" />
-            <Image src="/assets/images/svg/logo-facebook.svg" width={18} height={18} alt="fb" />
-            <Image src="/assets/images/svg/logo-instagram.svg" width={18} height={18} alt="ig" />
-            <Image src="/assets/images/svg/logo-linkedin.svg" width={18} height={18} alt="in" />
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110">
+              <Image src="/assets/images/svg/logo-twitter.svg" width={18} height={18} alt="twitter" className="transition-all duration-300 hover:brightness-0 hover:invert" />
+            </a>
+
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110">
+              <Image src="/assets/images/svg/logo-facebook.svg" width={18} height={18} alt="fb" className="transition-all duration-300 hover:brightness-0 hover:invert" />
+            </a>
+
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110">
+              <Image src="/assets/images/svg/logo-instagram.svg" width={18} height={18} alt="ig" className="transition-all duration-300 hover:brightness-0 hover:invert" />
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110">
+              <Image src="/assets/images/svg/logo-linkedin.svg" width={18} height={18} alt="in" className="transition-all duration-300 hover:brightness-0 hover:invert" />
+            </a>
           </div>
+
         </div>
 
         {/* Navbar */}
@@ -72,10 +101,10 @@ export default function Navbar() {
               ))}
 
               {/* Property Dropdown */}
-              <div className="relative">
+              <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className={`flex items-center gap-2 px-3 xl:px-4 py-2 text-sm font-semibold rounded-full border transition whitespace-nowrap
+                  className={`flex items-center gap-2 px-3 xl:px-4 py-2 text-sm font-semibold rounded-full border transition whitespace-nowrap cursor-pointer
                   ${pathname === "/dashboard"
                       ? "bg-[var(--primary)] text-white border-[var(--primary)]"
                       : "bg-white text-[var(--textDark)] border-[var(--border)] hover:bg-gray-100 hover:text-gray-600 hover:border-gray-300"
@@ -159,7 +188,7 @@ export default function Navbar() {
                   <div>
                     <button
                       onClick={() => setMobilePropertyOpen(!mobilePropertyOpen)}
-                      className="flex justify-between items-center w-full text-[var(--textDark)] font-semibold"
+                      className="flex justify-between items-center w-full text-[var(--textDark)] font-semibold cursor-pointer"
                     >
                       Property
                       <Image

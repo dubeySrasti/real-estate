@@ -41,7 +41,7 @@ export default function Counters() {
               className={`relative flex flex-col gap-1 sm:gap-3 pe-2.5 sm:pe-0 items-center ${index !== counters.length - 1 ? "border-r border-gray-300" : ""
                 }`}
             >
-              <h2 className=" max-[400px]:text-sm text-lg sm:text-2xl md:text-6xl font-extrabold sm:font-bold text-black">
+              <h2 className=" max-[400px]:text-sm text-lg sm:text-2xl md:text-4xl lg:text-6xl font-extrabold sm:font-bold text-black">
                 {isVisible ? <CountUp target={item.number} /> : "0"}+
               </h2>
 

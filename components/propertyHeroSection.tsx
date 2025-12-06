@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 export default function PropertyHeroSection() {
+  const router = useRouter();
   return (
     <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-12 items-center">
       {/* LEFT CONTENT */}
@@ -25,7 +28,8 @@ export default function PropertyHeroSection() {
                 alt="arrow"
                 width={18}
                 height={18}
-                className="sm:w-6 sm:h-6 flex-shrink-0"
+                className="sm:w-6 sm:h-6 flex-shrink-0 cursor-pointer hover:opacity-70 transition-opacity"
+                onClick={() => router.push('/map')}
               />
               <input
                 type="text"

@@ -62,7 +62,7 @@ export default function PropertyData() {
             </h2>
 
             {/* TABLE STYLE */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 sm:gap-y-5 gap-x-4 sm:gap-x-6 text-[15px] mt-3 sm:mt-3.5">
+            <div className="grid grid-cols-2 min-[575px]:grid-cols-3 gap-y-3 sm:gap-y-5 gap-x-4 sm:gap-x-6 text-[15px] mt-3 sm:mt-3.5">
               {overviewData.map((item, index) => (
                 <div key={index} className="flex flex-col">
                   <p className="text-[var(--textLight)] text-xs sm:text-sm font-normal">{item.label}</p>
@@ -112,7 +112,12 @@ export default function PropertyData() {
           {/* Map */}
           <div className="w-full space-y-3 flex flex-col gap-3.5">
 
-            <u className="text-sm font-extrabold text-[#7BBCB0] mb-0">
+            <u
+              onClick={() => {
+                window.open("https://www.google.com/maps", "_blank");
+              }}
+              className="text-sm font-extrabold text-[#7BBCB0] mb-0 cursor-pointer"
+            >
               Open in Google Maps
             </u>
 
@@ -135,38 +140,38 @@ export default function PropertyData() {
               Rental Info
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
 
               {/* Security Deposit */}
-              <div className="flex flex-col gap-1.5 sm:gap-2">
-                <p className="text-sm sm:text-base font-bold text-[#1C2B38]">
+              <div className="flex flex-col gap-1 sm:gap-1.5">
+                <p className="text-[10px] sm:text-sm md:text-base font-bold text-[#1C2B38]">
                   Security Deposit
                 </p>
-                <p className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[#495560]">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
-                  ₹ 2,00,000
+                <p className="flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs md:text-sm font-semibold text-[#495560]">
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
+                  <span className="break-words">₹ 2,00,000</span>
                 </p>
               </div>
 
               {/* Electricity */}
-              <div className="flex flex-col gap-1.5 sm:gap-2">
-                <p className="text-sm sm:text-base font-bold text-[#1C2B38]">
+              <div className="flex flex-col gap-1 sm:gap-1.5">
+                <p className="text-[10px] sm:text-sm md:text-base font-bold text-[#1C2B38]">
                   Electricity
                 </p>
-                <p className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[#495560]">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
-                  ₹ 10 Per Unit
+                <p className="flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs md:text-sm font-semibold text-[#495560]">
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
+                  <span className="break-words">₹ 10 Per Unit</span>
                 </p>
               </div>
 
               {/* Is Negotiable */}
-              <div className="flex flex-col gap-1.5 sm:gap-2">
-                <p className="text-sm sm:text-base font-bold text-[#1C2B38]">
+              <div className="flex flex-col gap-1 sm:gap-1.5">
+                <p className="text-[10px] sm:text-sm md:text-base font-bold text-[#1C2B38]">
                   Is Negotiable
                 </p>
-                <p className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[#495560]">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
-                  No
+                <p className="flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs md:text-sm font-semibold text-[#495560]">
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-[#495560] rounded-full flex-shrink-0"></span>
+                  <span className="break-words">No</span>
                 </p>
               </div>
 
@@ -280,10 +285,24 @@ export default function PropertyData() {
               Rent
             </button>
 
-            <button className="w-full border border-[#E2E8F0] py-2 sm:py-2.5 rounded-xl text-[#778088] text-sm sm:text-base font-semibold flex justify-center gap-2">
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: "Real Estate Activity",
+                    text: "Check out this activity!",
+                    url: window.location.href,
+                  });
+                } else {
+                  alert("Share not supported in this browser");
+                }
+              }}
+              className="w-full border border-[#E2E8F0] py-2 sm:py-2.5 rounded-xl text-[#778088] text-sm sm:text-base font-semibold flex justify-center gap-2 cursor-pointer"
+            >
               <Image src="/assets/images/svg/share.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="share" />
               <span className="whitespace-nowrap">Share The Activity</span>
             </button>
+
           </div>
 
           {/* Agent Card */}
@@ -302,12 +321,18 @@ export default function PropertyData() {
             </div>
 
             <div className="flex w-full gap-2 sm:gap-3">
-              <button className="flex-1 bg-[#170085] text-white py-1.5 text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-1.5 rounded-full">
+              <button 
+                onClick={() => window.location.href = "tel:+1234567890"}
+                className="flex-1 bg-[#170085] text-white py-1.5 text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-1.5 rounded-full cursor-pointer"
+              >
                 <Image src="/assets/images/svg/call-icon.svg" width={16} height={16} className="sm:w-[18px] sm:h-[18px] invert brightness-0" alt="call" />
                 Call
               </button>
 
-              <button className="flex-1 border border-[#E2E8F0] py-1.5 text-[#718096] text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-1.5 rounded-full">
+              <button 
+                onClick={() => window.open("https://wa.me/1234567890", "_blank")}
+                className="flex-1 border border-[#E2E8F0] py-1.5 text-[#718096] text-xs sm:text-sm font-semibold flex items-center justify-center gap-1 sm:gap-1.5 rounded-full cursor-pointer"
+              >
                 <Image src="/assets/images/svg/uil-comment.svg" width={16} height={16} className="sm:w-[18px] sm:h-[18px]" alt="whatsapp" />
                 WhatsApp
               </button>
@@ -319,7 +344,7 @@ export default function PropertyData() {
             <p className="font-bold text-sm sm:text-base text-[var(--textDark)] border-b pb-2 sm:pb-3">Contact Info</p>
 
             {/* Phone */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <a href="tel:+919123456789" className="flex items-center gap-2 sm:gap-3 cursor-pointer">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#F7F3FF] rounded-full flex items-center justify-center flex-shrink-0">
                 <Image src="/assets/images/svg/call.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="call" />
               </div>
@@ -328,10 +353,10 @@ export default function PropertyData() {
                 <p className="text-xs sm:text-sm font-medium text-[#ABAFB1]">Alternative Number</p>
                 <p className="font-bold text-xs sm:text-sm text-[var(--textDark)] break-all">+91 91234 56789</p>
               </div>
-            </div>
+            </a>
 
             {/* Email */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <a href="mailto:shoprentals.indore@gmail.com" className="flex items-center gap-2 sm:gap-3 cursor-pointer">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#F7F3FF] rounded-full flex items-center justify-center flex-shrink-0">
                 <Image src="/assets/images/svg/message.svg" width={20} height={20} className="sm:w-6 sm:h-6" alt="email" />
               </div>
@@ -340,7 +365,7 @@ export default function PropertyData() {
                 <p className="text-xs sm:text-sm font-medium text-[#ABAFB1]">Email</p>
                 <p className="font-bold text-xs sm:text-sm text-[var(--textDark)] break-all">shoprentals.indore@gmail.com</p>
               </div>
-            </div>
+            </a>
           </div>
 
         </div>

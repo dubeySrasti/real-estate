@@ -9,6 +9,7 @@ export default function AgentList() {
     const agents = Array(15).fill({
         name: "Fisher Allston",
         role: "Estate Trading Consultant",
+        phone: "+1234567890", // Add phone number for each agent
     });
 
     return (
@@ -52,7 +53,10 @@ export default function AgentList() {
                                 </div>
                             </div>
 
-                            <button className="bg-[var(--accent)] hover:bg-[#0f0066] text-white py-1.5 sm:py-1.5 px-3 sm:px-4 rounded-full text-[11px] sm:text-[12px] font-semibold transition-all duration-300 flex items-center justify-center gap-[5px]">
+                            <a 
+                                href={`tel:${agent.phone}`}
+                                className="bg-[var(--accent)] hover:bg-[#0f0066] text-white py-1.5 sm:py-1.5 px-3 sm:px-4 rounded-full text-[11px] sm:text-[12px] font-semibold transition-all duration-300 flex items-center justify-center gap-[5px] cursor-pointer"
+                            >
                                 <Image
                                     src="/assets/images/svg/call-icon.svg"
                                     alt="call"
@@ -61,7 +65,7 @@ export default function AgentList() {
                                     className="w-[18px] h-[18px] brightness-0 invert"
                                 />
                                 Call for information
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>

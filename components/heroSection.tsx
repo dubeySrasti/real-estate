@@ -201,7 +201,7 @@ export default function HeroSection() {
                         {/* BUTTONS */}
                         <div className="flex gap-2 sm:gap-3 flex-wrap justify-center">
 
-                            <button className="flex gap-2 sm:gap-3 bg-white py-2 sm:py-1.5 px-3 sm:px-3 rounded-md items-center">
+                            <button className="flex gap-2 sm:gap-3 bg-white py-2 sm:py-1.5 px-3 sm:px-3 rounded-md items-center w-[115px] sm:w-[140px] md:w-[185px]">
                                 <img src="/assets/images/svg/apple.svg" className="w-4 sm:w-5 md:w-7 flex-shrink-0" />
                                 <div className="flex flex-col items-start">
                                     <h5 className="text-[8px] sm:text-[10px] md:text-sm font-semibold text-black leading-tight">Download on the</h5>
@@ -209,7 +209,7 @@ export default function HeroSection() {
                                 </div>
                             </button>
 
-                            <button className="flex gap-2 sm:gap-3 bg-white py-2 sm:py-1.5 px-3 sm:px-3 rounded-md items-center">
+                            <button className="flex gap-2 sm:gap-3 bg-white py-2 sm:py-1.5 px-3 sm:px-3 rounded-md items-center w-[115px] sm:w-[140px] md:w-[185px]">
                                 <img src="/assets/images/svg/google-play.svg" className="w-4 sm:w-5 md:w-7 flex-shrink-0" />
                                 <div className="flex flex-col items-start">
                                     <h5 className="text-[8px] sm:text-[10px] md:text-sm font-semibold text-black leading-tight">Get it on</h5>

@@ -25,13 +25,14 @@ export default function AppStore() {
                                 className="
                                 mobile-img
                                 object-contain absolute
-                                max-[400px]:top-[-10px]    
+                                max-[400px]:top-[-10px]
+                                max-[640px]:top-[-15px]
                                 sm:top-[-20px]
                                 md:top-[-28px]
                                 lg:top-[-23px]
                                 xl:top-[-50px]
                                max-[400px]:w-[150px]
-                                max-w-[170px]     
+                                max-w-[163px]     
                                 sm:max-w-[276px]
                                 md:max-w-[370px]
                                 lg:max-w-[400px]
@@ -48,7 +49,8 @@ export default function AppStore() {
                             <h2 className="
                             text-white font-extrabold leading-tight right-heading
                              max-[400px]:text-[10px]
-                            text-sm
+                              max-[575px]:text-[14px]
+                            text-[16px]
                             sm:text-xl
                             md:text-2xl
                             lg:text-[38px]
@@ -60,8 +62,9 @@ export default function AppStore() {
                             <p className="
                                 text-white font-medium
                                 text-[6px]
+                                
                                 sm:text-[10px]
-                                md:text-base
+                                md:text-sm
                                 lg:text-base
                                 md:pe-6
                                
@@ -71,20 +74,20 @@ export default function AppStore() {
                             </p>
 
                             {/* BUTTONS */}
-                            <div className="flex gap-1.5 sm:gap-3 sm:justify-start justify-start">
+                            <div className="flex  gap-1.5 sm:gap-3 sm:justify-start justify-start">
 
-                                <button className="flex gap-0.5 sm:gap-2 bg-black py-1.5 px-2 sm:px-3 md:px-5 rounded-md">
+                                <button className="flex gap-0.5 sm:gap-2 bg-black py-1.5 px-2 sm:px-3 md:px-5 rounded-md max-[400px]:w-[130px] w-[75px] sm:w-[170px] md:w-[185px]">
                                     <img src="/assets/images/svg/apple.svg" className="w-2 sm:w-4 md:w-6 invert brightness-0" />
                                     <div className="flex flex-col items-start">
-                                        <h5 className="text-[5px] sm:text-xs md:text-sm font-light text-white">Download on the</h5>
+                                        <h5 className="text-[5px] sm:text-xs md:text-sm font-light text-white whitespace-nowrap">Download on the</h5>
                                         <h6 className="text-[6px] sm:text-base md:text-sm font-bold text-white">App Store</h6>
                                     </div>
                                 </button>
 
-                                <button className="flex gap-0.5 sm:gap-2 bg-black py-1.5 px-2 sm:px-3 md:px-5  rounded-md">
+                                <button className="flex gap-0.5 sm:gap-2 bg-black py-1.5 px-2 sm:px-3 md:px-5  rounded-md max-[400px]:w-[130px] w-[75px] sm:w-[170px] md:w-[185px]">
                                     <img src="/assets/images/svg/google-play.svg" className="w-2 sm:w-4 md:w-6" />
                                     <div className="flex flex-col items-start">
-                                        <h5 className="text-[5px] sm:text-xs md:text-sm font-light text-white">Get in on</h5>
+                                        <h5 className="text-[5px] sm:text-xs md:text-sm font-light text-white whitespace-nowrap">Get in on</h5>
                                         <h6 className="text-[6px] sm:text-base md:text-sm font-bold text-white">Google Play</h6>
                                     </div>
                                 </button>
@@ -107,18 +110,18 @@ export default function AppStore() {
                             <h3 className="text-black  max-[400px]:text-[10px] text-sm sm:text-base md:text-base lg:text-lg font-semibold sm:pe-13 pe-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took.</h3>
                         </div>
                         <div className="flex gap-3 flex-wrap justify-start ">
-                            <button className="flex gap-2 bg-black py-1.5 px-3 sm:px-5 rounded-md">
+                            <button className="flex gap-2 bg-black py-1.5 px-3 sm:px-5 rounded-md max-[400px]:w-[130px] w-[170px] sm:w-[170px] md:w-[185px]">
                                 <img src="/assets/images/svg/apple.svg" className="w-4 sm:w-7 invert brightness-0" />
                                 <div className="flex flex-col items-start">
-                                    <h5 className="max-[400px]:text-[10px] sm:text-sm font-light text-white">Download on the</h5>
+                                    <h5 className="max-[400px]:text-[10px] sm:text-sm font-light text-white whitespace-nowrap">Download on the</h5>
                                     <h6 className="max-[400px]:text-[10px] sm:text-sm font-bold text-white">App Store</h6>
                                 </div>
                             </button>
 
-                            <button className="flex gap-2 bg-black py-1.5 px-3 sm:px-5 rounded-md">
+                            <button className="flex gap-2 bg-black py-1.5 px-3 sm:px-5 rounded-md max-[400px]:w-[130px] w-[170px] sm:w-[170px] md:w-[185px]">
                                 <img src="/assets/images/svg/google-play.svg" className="w-4 sm:w-7" />
                                 <div className="flex flex-col items-start">
-                                    <h5 className="max-[400px]:text-[10px] sm:text-sm font-light text-white">Get in on</h5>
+                                    <h5 className="max-[400px]:text-[10px] sm:text-sm font-light text-white whitespace-nowrap">Get in on</h5>
                                     <h6 className="max-[400px]:text-[10px] sm:text-sm  font-bold text-white">Google Play</h6>
                                 </div>
                             </button>
